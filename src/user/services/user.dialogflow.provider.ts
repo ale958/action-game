@@ -11,10 +11,10 @@ import { UserService } from './user.service';
 @Injectable()
 export class UserDialogFlowComponent {
   /* Into your dialogflow account, create the appropriate intent that has to be reference in this file. */
-
-  constructor(private userService: UserService) {
+  
+  constructor(@Inject(UserService) private userService: UserService) {
   }
-
+  
   @DialogFlowAction('ask-first-position')
   public handleEventDebug(
     dialogFlowResponse: DialogFlowResponse,
